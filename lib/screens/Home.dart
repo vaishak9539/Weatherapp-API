@@ -47,14 +47,14 @@ class _HomeState extends State<Home> {
     var date = DateTime.now();
 
     
-    // if (weatherServiceProvider.isLoading) {
-    //   return Scaffold(
-    //     backgroundColor: Colors.black,
-    //     body: const Center(
-    //       child: CircularProgressIndicator(color: Colors.white),
-    //     ),
-    //   );
-    // }
+    if (weatherServiceProvider.isLoading) {
+      return Scaffold(
+        backgroundColor: Colors.black,
+        body: const Center(
+          child: CircularProgressIndicator(color: Colors.white),
+        ),
+      );
+    }
 
     final weather = weatherServiceProvider.weather;
 
@@ -199,13 +199,6 @@ class _HomeState extends State<Home> {
               ],
             ),
           ),
-          if (weatherServiceProvider.isLoading)
-            Container(
-              color: Colors.black.withOpacity(0.4),
-              child: const Center(
-                child: CircularProgressIndicator(color: Colors.white),
-              ),
-            ),
         ],
       ),
     );
